@@ -13,12 +13,8 @@ window.Pusher = require("pusher-js");
 
 window.Echo = new Echo({
   broadcaster: "pusher",
-  /*  key: '2922811141f26fe49ffd',
-    wsHost: "127.0.0.1", */
   key: process.env.VUE_APP_WEBSOCKETS_KEY,
   wsHost: process.env.VUE_APP_WEBSOCKETS_SERVER,
-  // encrypted: false,
-  // cluster: "ap1",
   wsPort: 6001,
   forceTLS: false,
   disableStats: true,
@@ -48,6 +44,5 @@ Vue.config.productionTip = false;
 
 new Vue({
   router,
-  // eslint-disable-next-line prettier/prettier
   render: (h) => h(App),
 }).$mount("#app");
